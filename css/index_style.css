@@ -1,0 +1,192 @@
+/* CSS Variables */
+:root {
+    --primary: rgb(11, 12, 15);
+    --bg:rgb(37, 40, 49);
+    --text: white;
+    --shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+
+  }
+
+  body {
+    background-color:var(--bg);
+    margin: 30px 50px;
+    line-height: 1.4;
+  }
+  
+  a, a:visited, a:focus, a:active { text-decoration: none; color:var(--text); }
+  .btn {
+    background: var(--bg);
+    color: var(--text);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-gap: 20px;
+  }
+  
+  /* Top Container */
+  .top-container {
+    display: grid;
+    grid-gap: 2em;
+    
+    grid-template-areas:
+    'showcase showcase showcase right-box';
+    
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Showcase */
+  .showcase {
+    grid-area: showcase;
+    background: url(../img/war-conceptart.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+  }
+  
+  .showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--text);
+  }
+  
+  .showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--text);
+  }
+  
+  /* Top Box */
+  .right-box {
+    grid-area: right-box;
+    background-color: rgb(11, 12, 15);
+    box-shadow: var(--shadow);
+    max-width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    align-items: center;
+
+    padding: 2em 2em 4em 2em;
+
+
+  }
+
+  .right-box h4{
+    padding-top:1em;
+  }
+
+  .right-box img{
+    max-width: 6em;
+    border-radius: 50%;
+  }
+
+  .right-box ul{
+
+
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    min-width: 80%;
+
+    justify-content: space-around;
+    align-self: flex-start;
+
+  
+  }
+
+  .right-box ul img{
+    max-width: 3em;
+  }
+  
+  /* Boxes */
+  .boxes {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    color:white;
+  }
+  
+  .box {
+    background: var(--primary);
+    text-align: left;
+    padding: 2rem 3rem;
+    box-shadow: var(--shadow);
+    transition: all .3s ease-in-out; 
+  }
+
+  .box:hover { 
+      transform: scale(1.1); 
+  }
+
+  .one{
+    background: url(../img/DazzleRocks_KeyArt_May2020.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .two{
+    background: url(../img/WildStarbg.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 700px) {
+    .top-container {
+      grid-template-areas:
+        'showcase showcase'
+        'right-box right-box-b';
+    }
+  
+    .showcase h1 {
+      font-size: 2.5rem;
+    }
+  
+    .main-nav ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .info {
+      grid-template-columns: 1fr;
+    }
+  
+    .info .btn {
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .top-container {
+      grid-template-areas:
+        'showcase'
+        'right-box'
+        'right-box-b';
+    }
+  }
+  

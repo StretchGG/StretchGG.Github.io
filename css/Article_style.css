@@ -1,0 +1,99 @@
+:root {
+    --primary: rgb(11, 12, 15);
+    --bg:rgb(37, 40, 49);
+    --text: white;
+    --shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+  }
+ 
+  html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+
+  }
+
+  body {
+    background-color:var(--bg);
+    margin: 30px 50px;
+    line-height: 1.4;
+  }
+
+  .top-container {
+    display: grid;
+    grid-gap: 2em;
+    
+    grid-template-areas:
+    'showcase showcase showcase right-box';
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Showcase */
+  .showcase {
+    grid-area: showcase;
+    background-color: rgb(11, 12, 15);
+    padding: 3rem;
+    
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+  }
+  
+  .showcase h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+  }
+  
+  .showcase p {
+    font-size: 1rem;
+    margin-top: 0;
+    color: var(--text);
+  }
+  
+  /* Top Box */
+  .right-box {
+    grid-area: right-box;
+    max-width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+  }
+
+
+  .right-box ul{
+    list-style: none;
+  }
+
+.right-box ul li{
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.game-info{
+  background-color: rgb(11, 12, 15);
+}
+
+article{
+    width:90%
+}
+
+article h3{
+  color: var(--text);
+}
+
+a:visited  , a:focus, a:active { text-decoration: underline; color:var(--text); }
+
+
+.btn {
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+
+  width:5%;
+
+  text-align: center;
+}
